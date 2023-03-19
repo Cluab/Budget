@@ -20,7 +20,6 @@ vendor/
 !/log/.keep
 !/tmp/.keep
 
-
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
@@ -35,3 +34,10 @@ vendor/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
