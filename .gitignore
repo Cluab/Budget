@@ -4,15 +4,10 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# .gitignore
-node_modules/
-
-
 # Ignore bundler config.
 /.bundle
-
-# .gitignore
-vendor/
+/vendor
+/node_modules
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -28,16 +23,11 @@ vendor/
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
 
 /public/assets
-.byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
