@@ -12,11 +12,11 @@ User.create!(name: "Bob")
 User.create!(name: "Charlie")
 
 # Exchanges
-Exchange.create!(name: "Food expenses", amount: 100, author_id: 1, group_id: 1)
-Exchange.create!(name: "Transport expenses", amount: 50, author_id: 2, group_id: 2)
-Exchange.create!(name: "Entertainment expenses", amount: 75, author_id: 3, group_id: 3)
+Exchange.create!(name: "Food expenses", amount: 100, author_id: 1)
+Exchange.create!(name: "Transport expenses", amount: 50, author_id: 2)
+Exchange.create!(name: "Entertainment expenses", amount: 75, author_id: 3)
 
 # Groups
-Group.create!(name: "Roommates", icon: "🏠", user_id: 1, exchange_id: 1)
-Group.create!(name: "Coworkers", icon: "💼", user_id: 2, exchange_id: 2)
-Group.create!(name: "Friends", icon: "🎉", user_id: 3, exchange_id: 3)
+Group.create!(name: "Roommates", icon: "🏠", user_id: 1)
+Group.create!(name: "Coworkers", icon: "💼", user_id: 2)
+Group.create!(name: "Friends", icon: "🎉", user_id: 3)
