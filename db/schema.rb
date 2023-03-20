@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_20_131052) do
+ActiveRecord::Schema.define(version: 2023_03_20_151723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "exchange_groups", force: :cascade do |t|
-    t.bigint "exchange_id"
-    t.bigint "group_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["exchange_id"], name: "index_exchange_groups_on_exchange_id"
-    t.index ["group_id"], name: "index_exchange_groups_on_group_id"
-  end
 
   create_table "exchanges", force: :cascade do |t|
     t.string "name"
@@ -31,6 +22,15 @@ ActiveRecord::Schema.define(version: 2023_03_20_131052) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_exchanges_on_author_id"
+  end
+
+  create_table "exchanges_groups", force: :cascade do |t|
+    t.bigint "exchange_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exchange_id"], name: "index_exchanges_groups_on_exchange_id"
+    t.index ["group_id"], name: "index_exchanges_groups_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -57,5 +57,7 @@ ActiveRecord::Schema.define(version: 2023_03_20_131052) do
   end
 
   add_foreign_key "exchanges", "users", column: "author_id"
+  add_foreign_key "exchanges_groups", "exchanges"
+  add_foreign_key "exchanges_groups", "groups"
   add_foreign_key "groups", "users"
 end
