@@ -1,4 +1,5 @@
 class ExchangesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_exchange, only: %i[ show edit update destroy ]
 
   # GET /exchanges or /exchanges.json
