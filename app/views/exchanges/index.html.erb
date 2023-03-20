@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exchanges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>User</th>
+      <th>Group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exchanges.each do |exchange| %>
+      <tr>
+        <td><%= exchange.name %></td>
+        <td><%= exchange.amount %></td>
+        <td><%= exchange.user_id %></td>
+        <td><%= exchange.Group_id %></td>
+        <td><%= link_to 'Show', exchange %></td>
+        <td><%= link_to 'Edit', edit_exchange_path(exchange) %></td>
+        <td><%= link_to 'Destroy', exchange, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exchange', new_exchange_path %>

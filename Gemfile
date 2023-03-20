@@ -12,7 +12,7 @@ gem 'letter_opener'
 gem 'rack-cors'
 gem 'rails-controller-testing'
 gem 'rspec', '~> 3.0'
-gem 'rspec-rails', '~> 5.0.0'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rubocop-discourse'
 gem 'shoulda-matchers', '~> 4.0'
@@ -59,6 +59,7 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails', '~> 5.0.0'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
