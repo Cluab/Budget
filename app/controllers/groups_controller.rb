@@ -22,8 +22,7 @@ class GroupsController < ApplicationController
 
   # POST /groups or /groups.json
   def create
-    @group = Group.new(group_params)
-
+    @group = current_user.groups.new(group_params)
     respond_to do |format|
       if @group.save
         format.html { redirect_to group_url(@group), notice: "Group was successfully created." }
@@ -66,6 +65,6 @@ class GroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_params
-      params.require(:group).permit(:name, :icon, :user_id, :exchange_id)
+      params.require(:group).permit(:name, :icon)
     end
 end
