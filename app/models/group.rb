@@ -1,4 +1,4 @@
 class Group < ApplicationRecord
   belongs_to :user
-  belongs_to :exchange
+  has_and_belongs_to_many :exchanges
 end
