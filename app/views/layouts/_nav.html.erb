@@ -1,0 +1,12 @@
+<ul class="nav-bar">
+  <% if user_signed_in? %>
+  <li class="nav-item">
+    <h2>
+      <%= "#{current_user.name}" %>
+    </h2>
+  </li>
+    <li class="nav-item">
+     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    </li>
+    <% end %>
+</ul>
