@@ -1,4 +1,4 @@
-<%= form_with(model: exchange) do |form| %>
+<%= form_with(model: exchange, url:  new_group_exchange_url(group) )do |form| %>
   <% if exchange.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(exchange.errors.count, "error") %> prohibited this exchange from being saved:</h2>
