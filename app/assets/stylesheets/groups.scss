@@ -1,3 +1,39 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.nav-container {
+    background-color: #3778c2;
+    height: 35px;
+    padding: 10px;
+
+    ul {
+        list-style: none;
+        padding-top: 10px;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between
+    }
+
+    li {
+        display: inline-block;
+
+        h2 {
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+            padding-bottom: 5px;
+            line-height: 20px;
+        }
+
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+    }
+
+}
