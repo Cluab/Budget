@@ -19,39 +19,8 @@
     margin:0;
     font-family: 'Poppins', sans-serif;
  }
- body {
-    margin:0;
- }
 
- body, p, ol, ul, td {
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px; }
-  
-  pre {
-    background-color: #eee;
-    padding: 10px;
-    font-size: 11px; }
-  
-  a {
-    color: #000; }
-  
-  a:visited {
-    color: #666; }
-  
-  a:hover {
-    color: #fff;
-    background-color: #000; }
-  
-  th {
-    padding-bottom: 5px; }
-  
-  td {
-    padding: 0 5px 7px; }
-  
-  div.field,
-  div.actions {
-    margin-bottom: 10px; }
+
   
   #notice {
     color: green; }
