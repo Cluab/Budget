@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_20_151723) do
+ActiveRecord::Schema.define(version: 2023_03_21_065754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 2023_03_20_151723) do
     t.bigint "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["exchange_id"], name: "index_exchanges_groups_on_exchange_id"
     t.index ["group_id"], name: "index_exchanges_groups_on_group_id"
+    t.index ["user_id"], name: "index_exchanges_groups_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -59,5 +61,6 @@ ActiveRecord::Schema.define(version: 2023_03_20_151723) do
   add_foreign_key "exchanges", "users", column: "author_id"
   add_foreign_key "exchanges_groups", "exchanges"
   add_foreign_key "exchanges_groups", "groups"
+  add_foreign_key "exchanges_groups", "users"
   add_foreign_key "groups", "users"
 end
