@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'splash/index'
   devise_for :users
-  resources :groups
+  resources :groups  do 
   resources :exchanges
+  end
   resources :users
 
   devise_scope :user do
