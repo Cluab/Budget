@@ -15,6 +15,7 @@ class ExchangesController < ApplicationController
   def new
     @exchange = Exchange.new
     @group = Group.find(params[:group_id])
+    @categories = Group.where(user_id: current_user.id)
   end
 
   # GET /exchanges/1/edit
@@ -23,18 +24,25 @@ class ExchangesController < ApplicationController
 
   # POST /exchanges or /exchanges.json
   def create
-    @exchange = Exchange.new(exchange_params)
+    params = exchange_params
+    @exchange = Exchange.new(name: params[:name], amount: params[:amount])
+    @exchange.author = current_user
+    @categories_ids = params[:group_ids]
+    @categories_ids.each do |id|
+      group = Group.find(id) unless id == ''
+      @exchange.groups.push(group) unless group.nil?
+    end
 
     respond_to do |format|
       if @exchange.save
-        format.html { redirect_to exchange_url(@exchange), notice: "Exchange was successfully created." }
+        format.html { redirect_to groups_url, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @exchange }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @exchange.errors, status: :unprocessable_entity }
       end
-    end
   end
+end
 
   # PATCH/PUT /exchanges/1 or /exchanges/1.json
   def update
@@ -67,6 +75,6 @@ class ExchangesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exchange_params
-      params.require(:exchange).permit(:name, :amount, :user_id, :Group_id)
+      params.require(:exchange).permit(:name, :amount, group_ids: [])
     end
 end
