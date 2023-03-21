@@ -1,0 +1,31 @@
+.nav-container {
+  width: 100vw;
+  background-color: #3778c2;
+  height: 40px;
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+
+
+    .nav-item {
+      display: inline-block;
+      padding: 10px;
+
+      h2 {
+        color: #fff;
+        margin: 0;
+      }
+
+      .nav-link {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+}
