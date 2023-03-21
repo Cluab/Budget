@@ -14,6 +14,7 @@ class ExchangesController < ApplicationController
   # GET /exchanges/new
   def new
     @exchange = Exchange.new
+    @group = Group.find(params[:group_id])
   end
 
   # GET /exchanges/1/edit

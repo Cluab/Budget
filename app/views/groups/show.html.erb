@@ -15,6 +15,21 @@
   <%= @group.user_id %>
 </p>
 
+<p><%= @group.total_amount %>$</p>
+
+<div class="exchanges-container">
+  <h3>Exchanges:</h3>
+  <ul class="list-group">
+    <% @group.exchanges.each do |exchange| %>
+      <li class="list-group-item">
+      <p><%= exchange.name %><p>
+   
+      </li>
+    <% end %>
+  </ul>
+
+</div>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
+<%= link_to 'New Exchange', new_group_exchange_path(@group) %>
