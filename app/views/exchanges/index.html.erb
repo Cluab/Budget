@@ -18,8 +18,7 @@
       <tr>
         <td><%= exchange.name %></td>
         <td><%= exchange.amount %></td>
-        <td><%= exchange.user_id %></td>
-        <td><%= exchange.Group_id %></td>
+        <td><%= exchange.author_id %></td>
         <td><%= link_to 'Show', exchange %></td>
         <td><%= link_to 'Edit', edit_exchange_path(exchange) %></td>
         <td><%= link_to 'Destroy', exchange, method: :delete, data: { confirm: 'Are you sure?' } %></td>

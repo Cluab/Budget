@@ -1,4 +1,4 @@
-<%= form_with(model: exchange, url:  new_group_exchange_url(group) )do |form| %>
+<%= form_with(model: exchange, url:  group_exchanges_url(group) )do |form| %>
   <% if exchange.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(exchange.errors.count, "error") %> prohibited this exchange from being saved:</h2>
@@ -21,16 +21,14 @@
     <%= form.number_field :amount %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
   <div class="field">
-    <%= form.label :Group_id %>
-    <%= form.text_field :Group_id %>
-  </div>
+    <%= form.label :groups %>
+    <%= form.select :group_ids, @categories.collect {|category| [category.name, category.id]}, { include_blank: false }, required: true, multiple: true %>
+    </div>
+</main>
 
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
