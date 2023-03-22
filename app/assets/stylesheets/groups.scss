@@ -49,9 +49,10 @@
 }
 
 .group-container {
-    height: 70vh;
+    height: 75vh;
     background-color: rgb(241, 232, 220);
     overflow: auto;
+    margin-bottom: 100px;
 
     ul {
         list-style: none;
