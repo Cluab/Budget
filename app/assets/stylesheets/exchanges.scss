@@ -6,3 +6,17 @@
     padding: 1.5rem 1rem;
     justify-content: space-between;
 }
+
+.select {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid #ccc;
+
+    option {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+}

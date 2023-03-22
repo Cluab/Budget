@@ -1,5 +1,43 @@
-<h1>New Exchange</h1>
+<div class="login-session" > 
+<%= form_with(model: @exchange, url:  group_exchanges_url(@group) )do |form| %>
 
-<%= render 'form', exchange: @exchange, group: @group %>
+    <header>
+      <nav >   
+        <%= link_to 'Show', @group  %>
+        <h1>New Exchange</h1>
+        <div class="actions">
+          <%= form.submit "Create" %>
+        </div>
+      </nav>
+    </header>
 
-<%= link_to 'Show', @group  %>
+<% if @exchange.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exchange.errors.count, "error") %> prohibited this exchange from being saved:</h2>
+
+      <ul>
+        <% @exchange.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+    <%= form.text_field :name, required: true, placeholder:"Exchange Name"%>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :amount, required: true, placeholder:"Amount"%>
+  </div>
+
+
+  <div class="field">
+    <%= form.select :group_ids, @categories.collect {|category| [category.name, category.id]}, { include_blank: false }, required: true, multiple: true, Class: "select" %>
+        
+    </div>
+
+<% end %>
+
+
+</div>
