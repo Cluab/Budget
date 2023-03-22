@@ -10,6 +10,7 @@
   </div>
       </nav>
     </header>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
 
  <div class="field">
@@ -25,7 +26,7 @@
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password Confirmation" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm Password" %>
   </div>
 
 <% end %>
