@@ -2,21 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .group-info-div {
-    display: flex;
-    padding: 1.5rem 1rem;
-    justify-content: space-between;
+  display: flex;
+  padding: 1.5rem 1rem;
+  justify-content: space-between;
 }
 
 .select {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid #ccc;
 
-    option {
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-    }
+  option {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
 }

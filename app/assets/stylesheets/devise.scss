@@ -1,72 +1,64 @@
 .login-session {
-    height: 100vh;
-    width: 100vw;
-    border: 1px solid rgb(23, 126, 160);
+  height: 100vh;
+  width: 100vw;
+  border: 1px solid rgb(23, 126, 160);
 
-    form {
-        header {
-            padding: 5px;
-            padding-bottom: 2px;
-            height: 7vh;
-            background-color: #3778c2;
+  form {
+    a {
+      display: flex;
+      justify-content: center;
+      color: #3778c2;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+    }
 
-            nav {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 10px;
+    header {
+      padding: 5px;
+      padding-bottom: 2px;
+      height: 7vh;
+      background-color: #3778c2;
 
-                a {
-                    color: #fff;
-                    text-decoration: none;
-                    font-size: 20px;
-                }
-
-                h1 {
-                    color: #fff;
-                    font-size: 20px;
-                    font-weight: 400;
-                }
-
-                input[type="submit"] {
-                    padding-top: 3px;
-                    background-color: #3778c2;
-                    border: none;
-                    color: #fff;
-                    font-size: 15px;
-                    font-weight: 400;
-                    text-decoration: none;
-                    cursor: pointer;
-                }
-
-
-
-            }
-
-
-        }
-
-
-        .field {
-            margin-top: 25px;
-            margin-bottom: 10px;
-
-            input {
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 10px;
-                border: none;
-            }
-
-        }
+      nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
 
         a {
-            display: flex;
-            justify-content: center;
-            color: #3778c2;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 400;
+          color: #fff;
+          text-decoration: none;
+          font-size: 20px;
         }
+
+        h1 {
+          color: #fff;
+          font-size: 20px;
+          font-weight: 400;
+        }
+
+        input[type="submit"] {
+          padding-top: 3px;
+          background-color: #3778c2;
+          border: none;
+          color: #fff;
+          font-size: 15px;
+          font-weight: 400;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
     }
+
+    .field {
+      margin-top: 25px;
+      margin-bottom: 10px;
+
+      input {
+        border-radius: 5px;
+        padding: 10px;
+        border: none;
+      }
+    }
+  }
 }
