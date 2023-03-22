@@ -12,7 +12,17 @@
         padding-left: 0;
         margin: 0;
         display: flex;
-        justify-content: space-between
+
+        justify-content: space-between;
+
+        h2 {
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+            padding-bottom: 5px;
+            line-height: 20px;
+        }
     }
 
     li {
@@ -39,8 +49,9 @@
 }
 
 .group-container {
-    height: 80vh;
+    height: 70vh;
     background-color: rgb(241, 232, 220);
+    overflow: auto;
 
     ul {
         list-style: none;
