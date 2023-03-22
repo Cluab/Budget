@@ -1,35 +1,45 @@
+  <% if user_signed_in? %>
+  <div class="nav-container">
+
+<ul class="nav-bar">
+
+  <li class="nav-item">
+  <a href='/'><i class="fas fa-arrow-left"></i></a>
+  </li>
+   <h2>
+      <%= @group.name %>
+    </h2>
+</ul>
+</div>
+ <% end %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+<div class='group-info-div'>
 
-<p>
-  <strong>Icon:</strong>
-  <%= @group.icon %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @group.user_id %>
-</p>
-
-<p><%= @group.total_amount %>$</p>
-
-<div class="exchanges-container">
-  <h3>Exchanges:</h3>
-  <ul class="list-group">
-    <% @group.recent_exchanges.each do |exchange| %>
-      <li class="list-group-item">
-      <p><%= exchange.name %><p>
-   
-      </li>
-    <% end %>
-  </ul>
+<p>Total Amount:</p>
+<p>$<%=@group.total_amount%></p>
 
 </div>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
-<%= link_to 'New Exchange', new_group_exchange_path(@group) %>
+<div class='group-container'>
+
+<ul>
+  <% @group.recent_exchanges.each do |exchange| %>
+    <li>
+    <div>
+    <div>
+        <%=exchange.name%>
+      <p><%= exchange.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    </div>
+          <p>$<%= exchange.amount%></p>
+    </li>
+  <% end %>
+</ul>
+
+<div class="add-div">
+<%=link_to 'New Exchange', new_group_exchange_path(@group) %>
+
+</div>
+</div>
