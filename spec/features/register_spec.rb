@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Register page', type: :feature do
   before :each do
-    @user1 = User.create(name: 'George', email: 'george@gmail.com', password: '123456', password_confirmation: '123456')
+    @user1 = create(:user, email: 'cluab@test.com', password: '123456')
     visit new_user_registration_path
   end
 
