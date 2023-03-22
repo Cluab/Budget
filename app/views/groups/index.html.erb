@@ -1,31 +1,41 @@
+  <% if user_signed_in? %>
+  <div class="nav-container">
+
+<ul class="nav-bar">
+
+  <li class="nav-item">
+    <h2>
+      <%= "#{current_user.name}" %>
+    </h2>
+  </li>
+    <li class="nav-item">
+     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+    </li>
+</ul>
+</div>
+ <% end %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
+ <div class='group-container'>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Icon</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul>
+  <% @groups.each do |group| %>
+    <li>
+    <div>
+    <img src="<%= group.icon %>">
+    <div>
+        <%= link_to group.name, group_path(group)%>
+      <p><%= group.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    </div>
+          <p>$<%= group.total_amount%></p>
+    </li>
+  <% end %>
+</ul>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.icon %></td>
-        <td><%= group.user_id %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= group.total_amount %>$</td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+<div class="add-div">
+<%= link_to 'New Category', new_group_path %>
+</div>
+</div>

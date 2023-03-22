@@ -1,5 +1,37 @@
-<h1>New Group</h1>
+<div class="login-session" > 
+<%= form_with(model: @group) do |form| %>
 
-<%= render 'form', group: @group %>
+    <header>
+      <nav >   
+        <a href='/'><i class="fas fa-arrow-left"></i></a>
+        <h1>New Category</h1>
+        <div class="actions">
+          <%= form.submit "Create" %>
+        </div>
+      </nav>
+    </header>
 
-<%= link_to 'Back', groups_path %>
+<% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% @group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, required: true, placeholder:"Category Name"%>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :icon, required: true, placeholder:"IconURL"%>
+  </div>
+
+<% end %>
+
+
+</div>
