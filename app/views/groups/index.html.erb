@@ -17,32 +17,24 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
+ <div class='group-container'>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Icon</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.icon %></td>
-        <td><%= group.user_id %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= group.total_amount %>$</td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<ul>
+  <% @groups.each do |group| %>
+    <li>
+    <div>
+    <img src="<%= group.icon %>">
+    <div>
+        <%= link_to group.name, group_path(group)%>
+      <p><%= group.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    </div>
+          <p>$<%= group.total_amount%></p>
+          
+      
+    </li>
+  <% end %>
+</ul>
+ </div>
 
 <%= link_to 'New Group', new_group_path %>
