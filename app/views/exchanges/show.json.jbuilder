@@ -1,1 +1,1 @@
-json.partial! "exchanges/exchange", exchange: @exchange
+json.partial! 'exchanges/exchange', exchange: @exchange

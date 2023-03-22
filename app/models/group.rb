@@ -5,7 +5,7 @@ class Group < ApplicationRecord
   validates :icon, presence: true
 
   def total_amount
-    self.exchanges.sum(:amount)
+    exchanges.sum(:amount)
   end
 
   def recent_exchanges

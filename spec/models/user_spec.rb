@@ -15,7 +15,6 @@ RSpec.describe User, type: :model do
       expect(user.errors[:name]).to include("can't be blank")
     end
 
-
     it 'is invalid without an email' do
       user = User.new(name: 'name', role: 'admin', email: nil, password: 'password')
 

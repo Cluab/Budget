@@ -111,3 +111,4 @@ Capybara.javascript_driver = :selenium
 RSpec.configure do |config|
   config.include Capybara::DSL
 end
+# Capybara.default_driver = :selenium_chrome

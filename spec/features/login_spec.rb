@@ -16,7 +16,7 @@ RSpec.describe 'Log In page', type: :feature do
     fill_in 'Email', with: @user1.email
     fill_in 'Password', with: @user1.password
     click_button 'Log in'
-    expect(page).to have_content("Log out")
+    expect(page).to have_content('Log out')
   end
 
   it "shouldn't be able to enter to root route" do

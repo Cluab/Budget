@@ -1,1 +1,1 @@
-json.array! @exchanges, partial: "exchanges/exchange", as: :exchange
+json.array! @exchanges, partial: 'exchanges/exchange', as: :exchange
