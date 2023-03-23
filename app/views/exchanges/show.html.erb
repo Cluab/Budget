@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exchange.name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @exchange.amount %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @exchange.user_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @exchange.Group_id %>
+</p>
+
+<%= link_to 'Edit', edit_exchange_path(@exchange) %> |
+<%= link_to 'Back', exchanges_path %>

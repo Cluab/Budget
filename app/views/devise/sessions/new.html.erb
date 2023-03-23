@@ -1,0 +1,31 @@
+<div class="login-session" > 
+ <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>  
+
+    <header>
+      <nav >   
+        <a href='/'><i class="fas fa-arrow-left"></i></a>
+        <h1>LOGIN</h1>
+        <div class="actions">
+          <%= f.submit "Log in" %>
+        </div>
+      </nav>
+    </header>
+
+    <div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"%>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+  </div>
+ <%= link_to "Forgot your password?", new_user_registration_path %>
+<% end %>
+
+
+</div>

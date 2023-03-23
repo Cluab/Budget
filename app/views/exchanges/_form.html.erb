@@ -1,0 +1,35 @@
+<%= form_with(model: exchange, url:  group_exchanges_url(group) )do |form| %>
+  <% if exchange.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(exchange.errors.count, "error") %> prohibited this exchange from being saved:</h2>
+
+      <ul>
+        <% exchange.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name , required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount  , required: true%>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :groups %>
+    <%= form.select :group_ids, @categories.collect {|category| [category.name, category.id]}, { include_blank: false }, required: true, multiple: true %>
+    </div>
+</main>
+
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
